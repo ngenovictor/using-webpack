@@ -7,7 +7,8 @@
     "test": "echo \"Error: no test specified\" && exit 1",
     "build": "webpack --mode development",
     "start": "npm run build; webpack-dev-server --open --mode development",
-    "lint": "eslint src/*.js"
+    "lint": "eslint src/*.js",
+    "dev": "npm run build; webpack-dev-server --mode development"
   },
   "keywords": [],
   "author": "",
