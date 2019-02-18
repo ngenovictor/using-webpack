@@ -9,6 +9,10 @@ module.exports = {
         filename: 'bundle.js',
         path: path.resolve(__dirname, 'dist')
     },
+    devtool: 'eval-source-map',
+    devServer: {
+        contentBase: './dist'
+    },
     plugins: [
         new HtmlWebpackPlugin({
             title: 'Ping Pong',
@@ -16,7 +20,7 @@ module.exports = {
             inject: 'body'
         }),
         new CleanWebpackPlugin(['dist']),
-        new UglifyJSPlugin()
+        new UglifyJSPlugin({sourceMap: true})
     ],
     module: {
         rules: [
