@@ -9,7 +9,7 @@ module.exports = {
         filename: 'bundle.js',
         path: path.resolve(__dirname, 'dist')
     },
-    devtool: 'eval-source-map',
+    devtool: 'eval-source-maps',
     devServer: {
         contentBase: './dist'
     },
@@ -30,7 +30,10 @@ module.exports = {
             }, 
             {
                 test: /\.js$/,
-                exclude: /node_modules/,
+                exclude: [
+                    /node_modules/,
+                    /spec/
+                ],
                 loader: "eslint-loader"
             }
         ]
